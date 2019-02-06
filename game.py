@@ -7,7 +7,7 @@ pygame.init()
 width, height = 640, 480
 screen=pygame.display.set_mode((width, height))
 keys = [False, False, False, False]
-playerpos=[100,240]
+playerpos=[100,250]
 
 
 # 3 - Load images
