@@ -26,7 +26,7 @@ while 1:
 
     screen.blit(castle,(0,135))
     screen.blit(castle,(0,240))
-    screen.blit(castle,(0,345 ))
+    screen.blit(castle,(0,345))
 
     #player sprite
     screen.blit(player, playerpos)
@@ -60,10 +60,22 @@ while 1:
 
         # 9 - Move player
         if keys[0]:
-            playerpos[1]-=5
-        elif keys[2]:
-            playerpos[1]+=5
+            if playerpos[1] <= 140:
+                keys[0] = False
+            else:
+                playerpos[1]-=10
+        if keys[2]:
+            if playerpos[1] >= 410:
+                keys[2] = False
+            else:
+                playerpos[1]+=10
         if keys[1]:
-            playerpos[0]-=5
+            if playerpos[0] <= 80:
+                keys[1] = False
+            else:
+                playerpos[0]-=10
         elif keys[3]:
-            playerpos[0]+=5
+            if playerpos[0] >= 570:
+                keys[3] = False
+            else:
+                playerpos[0]+=10
